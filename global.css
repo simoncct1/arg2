@@ -345,15 +345,27 @@ div.SoloAlert-prompt-input-wrapper div label {
 }
 
 div.SoloAlert-wrapper .SoloAlert {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 18pt !important;
+  font-weight: 500 !important;
   border-radius: 10px !important;
   box-shadow: 16px 16px 40px 0px rgba(218, 218, 218, 0.9), -16px -16px 32px 0px rgba(255, 255, 255, 0.9), 16px -16px 32px 0px rgba(218, 218, 218, 0.2), -16px 16px 32px 0px rgba(218, 218, 218, 0.2), -1px -1px 2px 0px rgba(218, 218, 218, 0.5) inset, 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset;
   padding: 10px;
 }
 
 body .SoloAlert-wrapper .SoloAlert .SoloAlert-actions .SoloAlert-action-button {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 14pt !important;
+  font-weight: 500 !important;
   color: rgb(88, 8, 8) !important;
 }
 
 body .SoloAlert-wrapper .SoloAlert .SoloAlert-actions .SoloAlert-action-button:first-child {
   color: rgb(88, 8, 8) !important;
+}
+
+body .SoloAlert-wrapper .SoloAlert h3 {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 16pt !important;
+  font-weight: 500 !important;
 }/*# sourceMappingURL=global.css.map */
