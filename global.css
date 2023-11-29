@@ -1,0 +1,341 @@
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 110vh;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+div#content {
+  background-color: rgb(255, 255, 255);
+  width: 95.5vw;
+  display: flex;
+  flex-wrap: wrap;
+  height: 93vh;
+  margin: 16pt;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+  row-gap: 2%;
+  -moz-column-gap: 1%;
+       column-gap: 1%;
+}
+div#content div.flex {
+  box-sizing: border-box;
+  border-radius: 15px;
+  transition: flex 0.4s ease-out, height 0.4s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out;
+  background-color: white;
+  box-shadow: 16px 16px 40px 0px rgba(218, 218, 218, 0.9), -16px -16px 32px 0px rgba(255, 255, 255, 0.9), 16px -16px 32px 0px rgba(218, 218, 218, 0.2), -16px 16px 32px 0px rgba(218, 218, 218, 0.2), -1px -1px 2px 0px rgba(218, 218, 218, 0.5) inset, 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18pt;
+  font-weight: 500;
+  overflow: hidden;
+  position: relative;
+  text-transform: uppercase;
+  flex-direction: column;
+  color: #000000;
+  text-shadow: 1px 1px 3px rgba(184, 184, 184, 0.89);
+}
+div#content .icon {
+  width: 6vw;
+}
+div#content .enigme {
+  opacity: 0%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  left: 0;
+}
+div#content .map {
+  flex: 59%;
+  height: 32%;
+}
+div#content .map:not(.blurred):hover {
+  flex: 60%;
+  height: 50%;
+}
+div#content .map:not(.blurred):hover .enigme {
+  opacity: 20%;
+}
+div#content .map:not(.blurred):hover ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .map:not(.blurred):hover ~ .budg {
+  flex: 30%;
+}
+div#content .map.active {
+  flex: 60%;
+  height: 50%;
+}
+div#content .map.active .enigme {
+  opacity: 100%;
+}
+div#content .map.active ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .map.active ~ .budg {
+  flex: 30%;
+}
+div#content .budg {
+  flex: 40%;
+  height: 32%;
+}
+div#content .budg:not(.blurred):hover {
+  flex: 30%;
+  height: 64%;
+}
+div#content .budg:not(.blurred):hover ~ .flex:not(.map, .budg) {
+  height: 20%;
+}
+div#content .budg.active {
+  flex: 30%;
+  height: 64%;
+}
+div#content .budg.active ~ .flex:not(.map, .budg) {
+  height: 20%;
+}
+div#content .dbs {
+  background-color: green;
+  flex: 10%;
+  height: 32%;
+}
+div#content .dbs:not(.blurred):hover {
+  flex: 12%;
+  height: 36%;
+}
+div#content .dbs:not(.blurred):hover ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .dbs:not(.blurred):hover ~ .budg {
+  flex: 30%;
+}
+div#content .dbs.active {
+  flex: 12%;
+  height: 36%;
+}
+div#content .dbs.active ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .dbs.active ~ .budg {
+  flex: 30%;
+}
+div#content .charte {
+  background-color: yellow;
+  flex: 18%;
+  height: 32%;
+}
+div#content .charte:hover {
+  flex: 18%;
+  height: 45%;
+}
+div#content .charte:hover ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .charte:hover ~ .budg {
+  flex: 30%;
+}
+div#content .charte.active {
+  flex: 18%;
+  height: 45%;
+}
+div#content .charte.active ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .charte.active ~ .budg {
+  flex: 30%;
+}
+div#content .fiches {
+  background-color: pink;
+  flex: 50%;
+  height: 32%;
+}
+div#content .fiches:not(.blurred):hover {
+  flex: 53%;
+  height: 40%;
+}
+div#content .fiches:not(.blurred):hover ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .fiches:not(.blurred):hover ~ .budg {
+  flex: 30%;
+}
+div#content .fiches.active {
+  flex: 53%;
+  height: 40%;
+}
+div#content .fiches.active ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .fiches.active ~ .budg {
+  flex: 30%;
+}
+div#content .contact {
+  background-color: aqua;
+  flex: 20%;
+  height: 32%;
+}
+div#content .contact:hover {
+  flex: 20%;
+  height: 44%;
+}
+div#content .contact:hover ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .contact:hover ~ .budg {
+  flex: 30%;
+}
+div#content .contact.active {
+  flex: 20%;
+  height: 44%;
+}
+div#content .contact.active ~ .flex:not(.map, .budg) {
+  height: 30%;
+}
+div#content .contact.active ~ .budg {
+  flex: 30%;
+}
+div#content .plan {
+  background-color: violet;
+  flex: 40%;
+  height: 32%;
+}
+div#content .plan:not(.blurred):hover {
+  flex: 40%;
+  height: 44%;
+  margin-bottom: 16pt;
+}
+div#content .plan:not(.blurred):hover ~ .flex:not(.plan, .contact, .fiches) {
+  height: 30%;
+}
+div#content .plan:not(.blurred):hover ~ .budg {
+  flex: 30%;
+}
+div#content .plan.active {
+  flex: 40%;
+  height: 44%;
+}
+div#content .plan.active ~ .flex:not(.plan, .contact, .fiches) {
+  height: 30%;
+}
+div#content .plan.active ~ .budg {
+  flex: 30%;
+}
+
+#blocker {
+  background-color: rgb(77, 77, 77);
+  height: 110vh;
+  position: absolute;
+  width: 100%;
+  opacity: 0%;
+  top: 0;
+  z-index: -1;
+  left: 0;
+  display: none;
+}
+
+.blurred div {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  opacity: 70%;
+  top: 0;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  left: 0;
+}
+
+.blurred p {
+  color: transparent;
+  text-shadow: 0 0 8px #929292;
+}
+
+.blurred img {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+#uint {
+  background-color: rgba(143, 143, 143, 0.24);
+  height: 0%;
+  position: absolute;
+  width: 100%;
+  opacity: 100%;
+  top: 0;
+  z-index: 8;
+  left: 0;
+}
+#uint img.logo {
+  height: auto;
+  width: 8vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: -7vh;
+  transform: rotate(0.1turn);
+  transition: margin 0.4s ease-out, transform 0.2s ease-out;
+  border-radius: 50%;
+}
+#uint .logo:hover {
+  margin: 20px;
+  bottom: 0;
+  left: 0;
+  transform: rotate(0turn);
+}
+#uint .logo.ok {
+  margin: 20px;
+  bottom: 0;
+  left: 0;
+  transform: rotate(0turn);
+}
+#uint .ok {
+  height: 100%;
+}
+#uint #logo {
+  height: 24vh;
+  border-radius: 50%;
+  width: 16vw;
+  height: auto;
+  padding-top: 16vw;
+  position: fixed;
+  bottom: -2vh;
+  left: -2vw;
+  border-radius: 50%;
+  display: flex;
+  flex: 0 0 auto;
+}
+#uint .uicon {
+  width: 40px;
+  background-color: #4400ff;
+  position: absolute;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+}
+#uint .uicon:nth-child(2) {
+  transform: rotate(72deg) translateX(-9vw);
+}
+#uint .uicon:nth-child(3) {
+  transform: rotate(106deg) translateX(-9vw);
+}
+#uint .uicon:nth-child(4) {
+  transform: rotate(140deg) translateX(-9vw);
+}
+#uint .uicon:nth-child(5) {
+  transform: rotate(176deg) translateX(-9vw);
+}/*# sourceMappingURL=global.css.map */

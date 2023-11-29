@@ -1,0 +1,28 @@
+div#content {
+  background-color: black;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+div#content .map {
+  color: red;
+}
+div#content .dbs {
+  color: green;
+}
+div#content .budg {
+  color: blue;
+}
+div#content .charte {
+  color: yellow;
+}
+div#content .fiches {
+  color: pink;
+}
+div#content .contact {
+  color: aqua;
+}
+div#content .plan {
+  color: violet;
+}

@@ -1,0 +1,366 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 110vh;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+div#content{
+    background-color:rgb(255, 255, 255);
+    width: 95.5vw;
+    display: flex;
+    flex-wrap: wrap;
+    height: 93vh;
+    margin: 16pt;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: stretch;
+    row-gap: 2%;
+    column-gap: 1%;
+    div.flex{
+        box-sizing: border-box;
+        // border: 1px solid rgb(199, 199, 199);
+        border-radius: 15px;
+        transition: flex 0.4s ease-out, height 0.4s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out;
+        background-color: white;
+        -webkit-box-shadow: 16px 16px 40px 0px rgba(218, 218, 218, 0.90), -16px -16px 32px 0px rgba(255, 255, 255, 0.90), 16px -16px 32px 0px rgba(218, 218, 218, 0.20), -16px 16px 32px 0px rgba(218, 218, 218, 0.20), -1px -1px 2px 0px rgba(218, 218, 218, 0.50) inset, 1px 1px 2px 0px rgba(255, 255, 255, 0.30) inset;
+        -moz-box-shadow: 16px 16px 40px 0px rgba(218, 218, 218, 0.90), -16px -16px 32px 0px rgba(255, 255, 255, 0.90), 16px -16px 32px 0px rgba(218, 218, 218, 0.20), -16px 16px 32px 0px rgba(218, 218, 218, 0.20), -1px -1px 2px 0px rgba(218, 218, 218, 0.50) inset, 1px 1px 2px 0px rgba(255, 255, 255, 0.30) inset;
+        box-shadow: 16px 16px 40px 0px rgba(218, 218, 218, 0.90), -16px -16px 32px 0px rgba(255, 255, 255, 0.90), 16px -16px 32px 0px rgba(218, 218, 218, 0.20), -16px 16px 32px 0px rgba(218, 218, 218, 0.20), -1px -1px 2px 0px rgba(218, 218, 218, 0.50) inset, 1px 1px 2px 0px rgba(255, 255, 255, 0.30) inset;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        font-family: 'Montserrat', sans-serif;
+        // font-family: 'Raleway', sans-serif;
+        font-size: 18pt;
+        font-weight: 500;
+        overflow: hidden;
+        position: relative;
+        text-transform: uppercase;
+        flex-direction: column;
+        color: #000000;
+        text-shadow: 1px 1px 3px rgba(184, 184, 184, 0.89);
+        }
+    .icon{
+        width: 6vw;
+    }
+    .enigme{
+        opacity: 0%;
+        height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    backdrop-filter: blur(10px);
+    left: 0;
+    }
+        .map{
+            flex: 59%;
+            height: 32%;
+        }
+        .map:not(.blurred):hover{  
+            flex: 60%;
+            height: 50%;
+        }
+        .map:not(.blurred):hover .enigme{  
+            opacity: 20%;
+        }
+        .map:not(.blurred):hover ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .map:not(.blurred):hover ~ .budg{  
+            flex: 30%;
+            
+        }
+        .map.active
+        {  
+            flex: 60%;
+            height: 50%;
+        }
+        .map.active .enigme
+        {  
+          opacity: 100%;
+        }
+        .map.active ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .map.active ~ .budg{  
+            flex: 30%;
+            
+        }
+        .budg{
+            flex: 40%;
+            height: 32%;
+        }
+        .budg:not(.blurred):hover{
+            flex: 30%;
+            height: 64%;
+        }
+        .budg:not(.blurred):hover ~ .flex:not(.map, .budg){  
+            height: 20%;
+        }
+        .budg.active{
+            flex: 30%;
+            height: 64%;
+        }
+        .budg.active ~ .flex:not(.map, .budg){  
+            height: 20%;
+        }
+        
+        .dbs{
+            background-color: green;
+            flex: 10%;
+            height: 32%;
+        }
+        .dbs:not(.blurred):hover{  
+            flex: 12%;
+            height: 36%;
+        }
+        .dbs:not(.blurred):hover ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .dbs:not(.blurred):hover ~ .budg{  
+            flex: 30%;
+            
+        }
+        .dbs.active{  
+            flex: 12%;
+            height: 36%;
+        }
+        .dbs.active ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .dbs.active ~ .budg{  
+            flex: 30%;
+            
+        }
+       
+        .charte{
+            background-color: yellow;
+            flex: 18%;
+            height: 32%;
+        }
+        .charte:hover{  
+            flex: 18%;
+            height: 45%;
+        }
+        .charte:hover ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .charte:hover ~ .budg{  
+            flex: 30%;
+            
+        }
+        .charte.active{  
+            flex: 18%;
+            height: 45%;
+        }
+        .charte.active ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .charte.active ~ .budg{  
+            flex: 30%;
+            
+        }
+        .fiches{
+            background-color: pink;
+            flex: 50%;
+            height: 32%;
+        }
+        .fiches:not(.blurred):hover{  
+            flex: 53%;
+            height: 40%;
+        }
+        .fiches:not(.blurred):hover ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .fiches:not(.blurred):hover ~ .budg{  
+            flex: 30%;
+            
+        }
+        .fiches.active{  
+            flex: 53%;
+            height: 40%;
+        }
+        .fiches.active ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .fiches.active ~ .budg{  
+            flex: 30%;
+            
+        }
+        .contact{
+            background-color:aqua;
+            flex: 20%;
+            height: 32%;      
+        }
+        .contact:hover{  
+            flex: 20%;
+            height: 44%;
+        }
+        .contact:hover ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .contact:hover ~ .budg{  
+            flex: 30%;
+            
+        }
+        .contact.active{  
+            flex: 20%;
+            height: 44%;
+            
+        }
+        .contact.active ~ .flex:not(.map, .budg){  
+            height: 30%;
+        }
+        .contact.active ~ .budg{  
+            flex: 30%;
+            
+        }
+        .plan{
+            background-color: violet;
+            flex: 40%;
+            height: 32%;
+          
+        }
+        .plan:not(.blurred):hover{  
+            flex: 40%; 
+            height: 44%;
+            margin-bottom: 16pt;
+        }
+        .plan:not(.blurred):hover ~ .flex:not(.plan, .contact, .fiches){  
+            height: 30%;
+        }
+        .plan:not(.blurred):hover ~ .budg{  
+            flex: 30%;
+            
+        }
+        .plan.active{  
+            flex:  40%; 
+            height: 44%;
+        }
+        .plan.active ~ .flex:not(.plan, .contact, .fiches){  
+            height: 30%;
+        }
+        .plan.active ~ .budg{  
+            flex: 30%;
+           
+            
+        }
+
+}
+
+//login 
+#blocker{
+   background-color: rgb(77, 77, 77);
+   height: 110vh;
+   position: absolute;
+   width: 100%;
+   opacity:0%;
+   top: 0;
+   z-index: -1;
+   left: 0;
+   display: none;
+//    display: none;
+}
+.blurred div{
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    opacity:70%;
+    top: 0;
+    backdrop-filter: blur(10px);
+    left: 0;
+    
+}
+.blurred p{
+    color: transparent;
+    text-shadow: 0 0 8px #929292;
+}
+.blurred img{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+//user interface
+
+
+#uint{
+    background-color: rgba(143, 143, 143, 0.24);
+    height: 0%;
+    position: absolute;
+    width: 100%;
+    opacity:100%;
+    top: 0;
+    z-index: 8;
+    left: 0;
+
+     img.logo{
+        height : auto;
+        width: 8vw;
+        position: fixed;
+        bottom: 0;   
+        left: 0; 
+        margin: -7vh;
+        transform: rotate(0.10turn);
+        transition: margin 0.4s ease-out, transform 0.2s ease-out;
+        border-radius: 50%;
+     }
+     .logo:hover{
+        margin: 20px;
+        bottom: 0;   
+        left: 0; 
+        transform: rotate(0turn);
+    }
+    .logo.ok{
+        margin: 20px;
+        bottom: 0;   
+        left: 0; 
+        transform: rotate(0turn);
+    }
+    .ok{
+        height: 100%;
+    }
+    #logo{
+        height: 24vh;
+        border-radius: 50%;
+        width: 16vw;
+        height: auto;
+        padding-top: 16vw;   
+        position: fixed;
+        bottom: -2vh;   
+        left: -2vw; 
+        border-radius: 50%;
+        display: flex;
+        flex: 0 0 auto;
+    }
+    .uicon{
+        width: 40px;
+        background-color: #4400ff;
+        position: absolute;
+        left: calc(50% - 20px);
+        top: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+    }
+  .uicon:nth-child(2) {
+        transform: rotate(72deg) translateX(-9vw);
+    }
+    
+    .uicon:nth-child(3) {
+        transform: rotate(106deg) translateX(-9vw);
+    }
+    
+    .uicon:nth-child(4) {
+        transform: rotate(140deg) translateX(-9vw);
+    }
+    
+    .uicon:nth-child(5) {
+        transform: rotate(176deg) translateX(-9vw);
+    }
+ }
