@@ -364,3 +364,19 @@ div#content{
         transform: rotate(176deg) translateX(-9vw);
     }
  }
+ // alerts
+ div.SoloAlert-prompt-input-wrapper div label{
+    display: none !important;
+  }
+  div.SoloAlert-wrapper .SoloAlert {
+    border-radius: 10px !important;
+    box-shadow: 16px 16px 40px 0px rgba(218, 218, 218, 0.90), -16px -16px 32px 0px rgba(255, 255, 255, 0.90), 16px -16px 32px 0px rgba(218, 218, 218, 0.20), -16px 16px 32px 0px rgba(218, 218, 218, 0.20), -1px -1px 2px 0px rgba(218, 218, 218, 0.50) inset, 1px 1px 2px 0px rgba(255, 255, 255, 0.30) inset;
+    padding: 10px;
+
+}
+body .SoloAlert-wrapper .SoloAlert .SoloAlert-actions .SoloAlert-action-button {
+  color:rgb(88, 8, 8) !important;
+}  
+body .SoloAlert-wrapper .SoloAlert .SoloAlert-actions .SoloAlert-action-button:first-child {
+    color:rgb(88, 8, 8) !important;
+  }  
