@@ -321,6 +321,7 @@ div#content .plan.active ~ .budg {
 #uint .uicon {
   width: 40px;
   background-color: #4400ff;
+  /* display: none; */
   position: absolute;
   left: calc(50% - 20px);
   top: calc(50% - 20px);

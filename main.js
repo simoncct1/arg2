@@ -50,18 +50,27 @@ for(i=0;i<x.length; i++){
 }
 
 //interface
-var blocker
+var blocker;
+var isBlocked = 0;
 document.querySelector(".logo").addEventListener('click',function (e) {
-    console.log("cc");
-    console.log(this);
     this.classList.toggle('ok');
     blocker = document.getElementById("blocker");
     blocker.style = "z-index:1; opacity: 10%; display: block;";
+    console.log(isBlocked);
+
+    if(!this.classList.contains("ok")){
+        document.querySelector("#blocker").style = "z-index:-1; display: none";
+    }
+
+
     blocker.addEventListener('click', function (e){
         document.querySelector(".logo").classList.remove('ok');
-    document.querySelector("#blocker").style = "z-index:-1; display: none";
+        document.querySelector("#blocker").style = "z-index:-1; display: none";
     })
-    }) 
+
+
+
+}) 
 
 //alerts
 
@@ -83,6 +92,7 @@ SoloAlert.prompt({
     theme: "light",
     // additional HTML content
     html: "",
+    onCancel: ()=>{window.location.replace("index.html")},
     useTransparency: true
 }).then(value => {
        var password= 1234;
@@ -130,7 +140,7 @@ SoloAlert.prompt({
                     body: "Veuillez encoder votre addresse mail",
                     // input type
                     type: "email",
-        
+                    onCancel: ()=>{window.location.replace("index.html")},
                     theme: "light",
                     // additional HTML content
                     html: "",
