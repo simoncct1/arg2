@@ -37,7 +37,7 @@ for(i=0;i<x.length; i++){
          var selected = this;
          document.querySelector(".plan").removeEventListener('mouseout', scrollToTop);
          document.querySelector(".contact").removeEventListener('mouseout', scrollToTop);
-        document.querySelector("#blocker").style = "z-index:10; opacity: 10%; display: block;";
+        document.querySelector("#blocker").style = "z-index:10; opacity: 20%; display: block;";
         document.querySelector("#blocker").addEventListener('click', function(){
             selected.classList.remove("active"); 
             document.querySelector("#blocker").style = "z-index:-1; display: none";
@@ -50,11 +50,12 @@ for(i=0;i<x.length; i++){
 }
 
 //interface
+var blocker
 document.querySelector(".logo").addEventListener('click',function (e) {
     console.log("cc");
     console.log(this);
     this.classList.toggle('ok');
-    blocker = document.querySelector("#blocker");
+    blocker = document.getElementById("blocker");
     blocker.style = "z-index:1; opacity: 10%; display: block;";
     blocker.addEventListener('click', function (e){
         document.querySelector(".logo").classList.remove('ok');

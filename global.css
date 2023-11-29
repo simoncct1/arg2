@@ -68,7 +68,7 @@ div#content .map:not(.blurred):hover {
   flex: 60%;
   height: 50%;
 }
-div#content .map:not(.blurred):hover .enigme {
+div#content .map:not(.active):hover .enigme {
   opacity: 20%;
 }
 div#content .map:not(.blurred):hover ~ .flex:not(.map, .budg) {
