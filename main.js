@@ -89,7 +89,7 @@ SoloAlert.prompt({
     // max number of characters
     textLimit: 15,
     // or "light", "dark"
-    theme: "light",
+    theme: "dark",
     // additional HTML content
     html: "",
     onCancel: ()=>{window.location.replace("index.html")},
@@ -106,7 +106,7 @@ SoloAlert.prompt({
         SoloAlert.alert({
             title:"Mauvais mot de passe",
             body:"Veuillez ré-essayer",
-            theme: "light",
+            theme: "dark",
             useTransparency: true,
           })
     
@@ -126,7 +126,7 @@ SoloAlert.prompt({
     // max number of characters
     textLimit: 8,
     // or "light", "dark"
-    theme: "light",
+    theme: "dark",
     // additional HTML content
     html: "",
     useTransparency: true
@@ -141,7 +141,7 @@ SoloAlert.prompt({
                     // input type
                     type: "email",
                     onCancel: ()=>{window.location.replace("index.html")},
-                    theme: "light",
+                    theme: "dark",
                     // additional HTML content
                     html: "",
                     useTransparency: true

@@ -33,9 +33,9 @@ div#content div.flex {
   box-sizing: border-box;
   border-radius: 15px;
   transition: flex 0.4s ease-out, height 0.4s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out;
-  background: rgb(80, 85, 91);
-  background: linear-gradient(16deg, rgb(80, 85, 91) 0%, rgb(44, 44, 48) 35%, rgb(0, 0, 0) 100%);
-  box-shadow: 0px 0px 47px -11px rgb(0, 0, 0);
+  background: rgb(53, 56, 59);
+  background: linear-gradient(16deg, rgb(53, 56, 59) 0%, rgb(44, 44, 48) 35%, rgb(0, 0, 0) 100%);
+  box-shadow: 0px 0px 47px -5px rgb(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,19 +355,20 @@ div.SoloAlert-wrapper .SoloAlert {
   font-size: 18pt !important;
   font-weight: 500 !important;
   border-radius: 10px !important;
-  box-shadow: 16px 16px 40px 0px rgba(218, 218, 218, 0.9), -16px -16px 32px 0px rgba(255, 255, 255, 0.9), 16px -16px 32px 0px rgba(218, 218, 218, 0.2), -16px 16px 32px 0px rgba(218, 218, 218, 0.2), -1px -1px 2px 0px rgba(218, 218, 218, 0.5) inset, 1px 1px 2px 0px rgba(255, 255, 255, 0.3) inset;
+  background: rgb(0, 0, 0) !important;
+  box-shadow: 0px 0px 47px -11px rgb(0, 0, 0) !important;
   padding: 10px;
 }
 
 body .SoloAlert-wrapper .SoloAlert .SoloAlert-actions .SoloAlert-action-button {
   font-family: "Montserrat", sans-serif !important;
   font-size: 14pt !important;
-  font-weight: 500 !important;
-  color: rgb(88, 8, 8) !important;
+  font-weight: 600 !important;
+  color: #DC143C !important;
 }
 
 body .SoloAlert-wrapper .SoloAlert .SoloAlert-actions .SoloAlert-action-button:first-child {
-  color: rgb(88, 8, 8) !important;
+  color: #DC143C !important;
 }
 
 body .SoloAlert-wrapper .SoloAlert h3 {
