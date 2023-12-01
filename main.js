@@ -37,7 +37,7 @@ for(i=0;i<x.length; i++){
          var selected = this;
          document.querySelector(".plan").removeEventListener('mouseout', scrollToTop);
          document.querySelector(".contact").removeEventListener('mouseout', scrollToTop);
-        document.querySelector("#blocker").style = "z-index:10; opacity: 20%; display: block;";
+        document.querySelector("#blocker").style = "z-index:10; opacity: 30%; display: block;";
         document.querySelector("#blocker").addEventListener('click', function(){
             selected.classList.remove("active"); 
             document.querySelector("#blocker").style = "z-index:-1; display: none";
@@ -55,7 +55,7 @@ var isBlocked = 0;
 document.querySelector(".logo").addEventListener('click',function (e) {
     this.classList.toggle('ok');
     blocker = document.getElementById("blocker");
-    blocker.style = "z-index:1; opacity: 10%; display: block;";
+    blocker.style = "z-index:1; opacity: 30%; display: block;";
     console.log(isBlocked);
 
     if(!this.classList.contains("ok")){
