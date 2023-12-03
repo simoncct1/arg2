@@ -1,8 +1,8 @@
 document.querySelector(".contact").addEventListener('mouseover', scrollToBottom);    
 document.querySelector(".plan").addEventListener('mouseover', scrollToBottom);
 function scrollToBottom(){
-    document.documentElement.style.height= "110vh"
-    window.scrollTo({ top: 100, behavior: 'smooth' });      
+    document.documentElement.style.height= "115vh"
+    window.scrollTo({ top: 115, behavior: 'smooth' });      
 }       
 document.querySelector(".contact").addEventListener('mouseout', scrollToTop);  
 document.querySelector(".plan").addEventListener('mouseout', scrollToTop);
