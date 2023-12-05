@@ -1,17 +1,5 @@
 "use strict";
 
-document.querySelector(".vid").addEventListener('click', function (e){;
-    document.getElementById('video').play();
-    console.log("bish");
-})
-
-var blocker = document.getElementById("blocker");
-blocker.addEventListener('click', function (e){
-    document.getElementById('video').pause();
-    document.getElementById('video').currentTime = 0;
-})
-
-console.log('b');
 
 // SETTINGS of this demo:
 const SETTINGS = {
