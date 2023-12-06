@@ -10,13 +10,28 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@500&display=swap" rel="stylesheet">
         <script src="https://unpkg.com/soloalert" type="text/javascript"></script>
-        <script src="js/jeelizFaceFilter.js"></script>
-        <script src="js/three.min.js"></script>
-        <script src="js/JeelizThreeHelper.js"></script>
-        <script src="js/modifiers.min.js"></script>
-        <script src="js/main.js"></script>
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://unpkg.com/three@v0.159.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/"
+              }
+            }
+          </script>
+
+          <script src="../../../dist/jeelizFaceFilter.js"></script>
+
+          <!-- INCLUDE JEELIZRESIZER -->
+          <script src="../../../dist/JeelizResizer.js"></script>
+      
+          <!-- INCLUDE JEELIZ THREE.JS HELPER -->
+          <script src="../../../dist/JeelizThreeHelper.js"></script>
+
+          <script src="../../../dist/three.js"></script>
+          <script src="../../../dist/GLTFLoader.js"></script>
+        
 </head>
-<body onload="main()">
+<body  >
     <!-- <div class="login-box">
         <img src="./assets/logo.png" alt="">
             <h2 class="heading-login-box">Login</h2>
@@ -44,9 +59,11 @@
     <div id="uint" class="idk"><div id="logo"><img src="assets/logo.png" class="logo" alt="" srcset=""><div class ="uicon" id="icon1"></div><div class ="uicon" id="icon2"></div><div class ="uicon" id="icon3"></div><div class ="uicon" id="icon4"></div></div></div>
     <div id ="content">
         <div class="map flex">
+            <div class="enigme">
+                <canvas id='carte'></canvas>
+            </div>
             <img class="icon mapicon" src="assets/map.png" alt="">
             <p>Cartes</p>
-            <img class="enigme" src="assets/world-140304_1280.jpg" alt="" srcset="">
         </div>
         <div id="budg" class="budg flex">
             <img class="icon bdg" src="" alt="">
@@ -72,7 +89,9 @@
                 <div class="vid">
                     <video id="video"  loop src="assets/call.mp4"></video>
                 </div>
-                <div class="cam"><canvas width="600" height="550" id='jeeFaceFilterCanvas'></canvas></div>
+                <div class="cam">
+                    <canvas id='jeeFaceFilterCanvas'></canvas>
+                </div>
                 <div class="useless"></div>
             </div>
             <img class="icon" src="assets/contact.png" alt="">
@@ -86,6 +105,7 @@
         </div>
     </div>
     <script type="module" src="main.js"></script>
-    <script type="module" src="contact.js"></script>
+    <script type ="module" src="contact.js"></script>
+    <script type ="module" src="carte.js"></script>
 </body>
 </html>

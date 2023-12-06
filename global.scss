@@ -1,7 +1,7 @@
 html {
     overflow: scroll;
     overflow-x: hidden;
-    height: 115vh;
+    height: 110vh;
     background-color:#2c2c30;
 }
 ::-webkit-scrollbar {
@@ -62,6 +62,7 @@ div#content{
     left: 0;
     }
     #contact{
+        background-color: #2D2B31;
         opacity: 0%;
         height: 100%;
     position: absolute;
@@ -71,7 +72,7 @@ div#content{
     backdrop-filter: blur(10px);
     left: 0;
     display: grid;
-    grid-template: 0.75fr 0.25fr /  0.3fr 0.7fr;
+    grid-template: 0.75fr 0.25fr /  0.5fr 0.5fr;
     .vid{
         background-color: #2D2B31;
         grid-area: 1 / 1 / 2 / 3;
@@ -82,11 +83,24 @@ div#content{
             position: fixed;
             top: 0;
             left: 0;
+          
         }
     }
     .cam{
-        background-color: blanchedalmond;
+        background-color: #2D2B31;
         grid-area: 2 / 1 / 2 / 1;
+        z-index: 222;
+        position: fixed;
+            bottom: 0;
+            left: 0;
+        
+        canvas{
+            background-color: #2D2B31;
+            height: 100% !important;
+            width: 100% !important;
+            margin-left: 2%;
+            border-radius: 15px;
+        }
     }
     .useless{
         background-color: #2D2B31;
@@ -250,7 +264,7 @@ div#content{
         }
         .contact.active{  
             flex: 20%;
-            height: 50%;
+            height:50%;
             
         }
         .contact.active #contact{  
