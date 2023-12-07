@@ -104,6 +104,11 @@ const SETTINGS = {
       }
     }); //end JEELIZFACEFILTER.init call
   } //end start()
-  
+  document.querySelector(".contact").addEventListener('click', function (e) {
+    document.querySelector(".vidicon").style.display ="none";
+    })
+    document.querySelector("#blocker").addEventListener('click', function (e) {
+        document.querySelector(".vidicon").style.display ="block";
+    })
   
   window.addEventListener('load', main);

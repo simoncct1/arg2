@@ -54,6 +54,7 @@ var blocker;
 var isBlocked = 0;
 document.querySelector(".logo").addEventListener('click',function (e) {
     this.classList.toggle('ok');
+    document.querySelector("#logo").classList.toggle('ok');
     blocker = document.getElementById("blocker");
     blocker.style = "z-index:1; opacity: 30%; display: block;";
     console.log(isBlocked);
@@ -65,6 +66,7 @@ document.querySelector(".logo").addEventListener('click',function (e) {
 
     blocker.addEventListener('click', function (e){
         document.querySelector(".logo").classList.remove('ok');
+        document.querySelector("#logo").classList.remove('ok');
         document.querySelector("#blocker").style = "z-index:-1; display: none";
     })
 

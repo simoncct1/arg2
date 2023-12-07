@@ -14,6 +14,10 @@ html {
 }
 div#content{
     background-color:#2c2c30;
+    background-image: url("/assets/BCK.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 95.5vw;
     display: flex;
     flex-wrap: wrap;
@@ -28,7 +32,7 @@ div#content{
         box-sizing: border-box;
         // border: 1px solid rgb(199, 199, 199);
         border-radius: 15px;
-        transition: flex 0.4s ease-out, height 0.4s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out;
+        transition: flex 0.4s ease-out, height 0.4s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out, position 0.4s ease-out;
         background: rgb(53, 56, 59);
         background: linear-gradient(16deg, rgba(53,56,59,1) 0%, rgba(44,44,48,1) 35%, rgba(0,0,0,1) 100%);
         -webkit-box-shadow: 0px 0px 47px -11px rgba(0,0,0,1);
@@ -61,6 +65,47 @@ div#content{
     top: 0;
     backdrop-filter: blur(10px);
     left: 0;
+    
+    .oper{
+        position: absolute;
+       left : 0%;
+       bottom: 0%;
+       color: #ffffff;
+       font-size: 14pt;
+       font-weight: 450;
+       width: 100%;
+       z-index: 15;
+       display: inline-flex;
+       align-content: flex-start;
+       flex-direction: row;
+       align-items: center;
+       flex-wrap: wrap;
+       justify-content: space-between;
+    #datetime{
+        margin-right: 5%;
+    }
+       p{
+        margin-left: 5%;
+       }
+       .redot{
+        filter: blur(2px);
+        background: rgb(0,0,0);
+        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(168,19,49,1) 0%, rgb(143, 33, 33) 100%);
+        border-radius: 50%;
+        height:1vh;
+        width: auto;
+        aspect-ratio: 1/1;
+        animation: lightning 1.5s infinite;
+        position: absolute;
+        top: 45%;
+        left: 2%;
+       }
+       @keyframes lightning {
+        0% {box-shadow: none;}
+        50% { box-shadow: 0px 0px 3px 3px rgb(177, 16, 48);}
+        100% {box-shadow: none;}
+      }
+    }
     canvas{
         z-index: 11;
         background: #000000;
@@ -70,11 +115,10 @@ div#content{
     }
     }
     #contact{
-        background-color: #2D2B31;
+        background-color: #201F23;
         opacity: 0%;
         height: 100%;
     position: absolute;
-    z-index: 2;
     width: 100%;
     top: 0;
     backdrop-filter: blur(10px);
@@ -82,7 +126,7 @@ div#content{
     display: grid;
     grid-template: 0.75fr 0.25fr /  0.5fr 0.5fr;
     .vid{
-        background-color: #2D2B31;
+        background-color: #201F23;
         grid-area: 1 / 1 / 2 / 3;
         video{
             object-fit: cover;
@@ -95,15 +139,14 @@ div#content{
         }
     }
     .cam{
-        background-color: #2D2B31;
+        background-color: #201F23;
         grid-area: 2 / 1 / 2 / 1;
-        z-index: 222;
         position: fixed;
             bottom: 0;
             left: 0;
         
         canvas{
-            background-color: #2D2B31;
+            background-color: #201F23;
             height: 100% !important;
             width: 100% !important;
             margin-left: 2%;
@@ -111,7 +154,7 @@ div#content{
         }
     }
     .useless{
-        background-color: #2D2B31;
+        background-color: #201F23;
         grid-area: 2 / 2 / 2 / 2;
     }
     
@@ -126,6 +169,9 @@ div#content{
         }
         .map:not(.active):hover .enigme{  
             opacity: 20%;
+        }
+        .map:not(.active):hover .oper{  
+            opacity: 0%;
         }
         .map:not(.blurred):hover ~ .flex:not(.map, .budg){  
             height: 30%;
@@ -142,6 +188,10 @@ div#content{
         .map.active .enigme
         {  
           opacity: 100%;
+        }
+        .map.active .oper
+        {  
+          opacity: 0%;
         }
         .map.active ~ .flex:not(.map, .budg){  
             height: 30%;
@@ -379,13 +429,13 @@ div#content{
         background-color: #272727;
      }
      .logo:hover{
-        margin: 20px;
+        margin: 2vh;
         bottom: 0;   
         left: 0; 
         transform: rotate(0turn);
     }
     .logo.ok{
-        margin: 20px;
+        margin: 2vh;
         bottom: 0;   
         left: 0; 
         transform: rotate(0turn);
@@ -394,43 +444,59 @@ div#content{
         height: 100%;
     }
     #logo{
-        height: 24vh;
-        border-radius: 50%;
-        width: 16vw;
+      
         height: auto;
-        padding-top: 16vw;   
+        border-radius: 50%;
+        width: 10vw;
+        aspect-ratio: 1/1;
         position: fixed;
-        bottom: -2vh;   
-        left: -2vw; 
+        margin: 2vh;
+        bottom: 0;   
+        left: 0; 
         border-radius: 50%;
         display: flex;
         flex: 0 0 auto;
+ 
     }
+
+
+    #uicons{
+        display: flex;
+        height: 50vh;
+        flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+     position: absolute;
+     top: 20%;
+     left: -10%;
+}
+
+    #logo.ok ~ #uicons{
+            display: flex;
+            height: 50vh;
+            flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+         position: absolute;
+         top: 20%;
+         left: 3%;
+    }
+    
     .uicon{
-        width: 40px;
-        background-color: #4400ff;
-        position: absolute;
-        left: calc(50% - 20px);
-        top: calc(50% - 20px);
-        width: 40px;
-        height: 40px;
-        display: none;
+        background: rgb(53, 56, 59);
+        background: linear-gradient(16deg, rgba(53,56,59,1) 0%, rgba(44,44,48,1) 35%, rgba(0,0,0,1) 100%);
+        -webkit-box-shadow: 0px 0px 47px -11px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 47px -11px rgba(0,0,0,1);
+        box-shadow: 0px 0px 47px -5px rgba(0,0,0,1);
+        border-radius: 15%;
+        width: 3vw;
+        height: auto;
+        aspect-ratio: 1/1;
+        
     }
-  .uicon:nth-child(2) {
-        transform: rotate(72deg) translateX(-9vw);
-    }
-    
-    .uicon:nth-child(3) {
-        transform: rotate(106deg) translateX(-9vw);
-    }
-    
-    .uicon:nth-child(4) {
-        transform: rotate(140deg) translateX(-9vw);
-    }
-    
-    .uicon:nth-child(5) {
-        transform: rotate(176deg) translateX(-9vw);
-    }
+  
  }
  // alerts
  div.SoloAlert-prompt-input-wrapper div label{

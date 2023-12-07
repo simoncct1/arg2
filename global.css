@@ -17,6 +17,10 @@ html {
 
 div#content {
   background-color: #2c2c30;
+  background-image: url("/assets/BCK.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 95.5vw;
   display: flex;
   flex-wrap: wrap;
@@ -32,7 +36,7 @@ div#content {
 div#content div.flex {
   box-sizing: border-box;
   border-radius: 15px;
-  transition: flex 0.4s ease-out, height 0.4s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out;
+  transition: flex 0.4s ease-out, height 0.4s ease-out, margin 0.4s ease-out, opacity 0.4s ease-out, position 0.4s ease-out;
   background: rgb(53, 56, 59);
   background: linear-gradient(16deg, rgb(53, 56, 59) 0%, rgb(44, 44, 48) 35%, rgb(0, 0, 0) 100%);
   box-shadow: 0px 0px 47px -5px rgb(0, 0, 0);
@@ -64,6 +68,52 @@ div#content .enigme {
           backdrop-filter: blur(10px);
   left: 0;
 }
+div#content .enigme .oper {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  color: #ffffff;
+  font-size: 14pt;
+  font-weight: 450;
+  width: 100%;
+  z-index: 15;
+  display: inline-flex;
+  align-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+div#content .enigme .oper #datetime {
+  margin-right: 5%;
+}
+div#content .enigme .oper p {
+  margin-left: 5%;
+}
+div#content .enigme .oper .redot {
+  filter: blur(2px);
+  background: rgb(0, 0, 0);
+  background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgb(168, 19, 49) 0%, rgb(143, 33, 33) 100%);
+  border-radius: 50%;
+  height: 1vh;
+  width: auto;
+  aspect-ratio: 1/1;
+  animation: lightning 1.5s infinite;
+  position: absolute;
+  top: 45%;
+  left: 2%;
+}
+@keyframes lightning {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0px 0px 3px 3px rgb(177, 16, 48);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
 div#content .enigme canvas {
   z-index: 11;
   background: #000000;
@@ -72,11 +122,10 @@ div#content .enigme canvas {
   left: 0;
 }
 div#content #contact {
-  background-color: #2D2B31;
+  background-color: #201F23;
   opacity: 0%;
   height: 100%;
   position: absolute;
-  z-index: 2;
   width: 100%;
   top: 0;
   -webkit-backdrop-filter: blur(10px);
@@ -86,7 +135,7 @@ div#content #contact {
   grid-template: 0.75fr 0.25fr/0.5fr 0.5fr;
 }
 div#content #contact .vid {
-  background-color: #2D2B31;
+  background-color: #201F23;
   grid-area: 1/1/2/3;
 }
 div#content #contact .vid video {
@@ -99,22 +148,21 @@ div#content #contact .vid video {
   left: 0;
 }
 div#content #contact .cam {
-  background-color: #2D2B31;
+  background-color: #201F23;
   grid-area: 2/1/2/1;
-  z-index: 222;
   position: fixed;
   bottom: 0;
   left: 0;
 }
 div#content #contact .cam canvas {
-  background-color: #2D2B31;
+  background-color: #201F23;
   height: 100% !important;
   width: 100% !important;
   margin-left: 2%;
   border-radius: 15px;
 }
 div#content #contact .useless {
-  background-color: #2D2B31;
+  background-color: #201F23;
   grid-area: 2/2/2/2;
 }
 div#content .map {
@@ -128,6 +176,9 @@ div#content .map:not(.blurred):hover {
 div#content .map:not(.active):hover .enigme {
   opacity: 20%;
 }
+div#content .map:not(.active):hover .oper {
+  opacity: 0%;
+}
 div#content .map:not(.blurred):hover ~ .flex:not(.map, .budg) {
   height: 30%;
 }
@@ -140,6 +191,9 @@ div#content .map.active {
 }
 div#content .map.active .enigme {
   opacity: 100%;
+}
+div#content .map.active .oper {
+  opacity: 0%;
 }
 div#content .map.active ~ .flex:not(.map, .budg) {
   height: 30%;
@@ -356,13 +410,13 @@ div#content .plan.active ~ .budg {
   background-color: #272727;
 }
 #uint .logo:hover {
-  margin: 20px;
+  margin: 2vh;
   bottom: 0;
   left: 0;
   transform: rotate(0turn);
 }
 #uint .logo.ok {
-  margin: 20px;
+  margin: 2vh;
   bottom: 0;
   left: 0;
   transform: rotate(0turn);
@@ -371,39 +425,48 @@ div#content .plan.active ~ .budg {
   height: 100%;
 }
 #uint #logo {
-  height: 24vh;
-  border-radius: 50%;
-  width: 16vw;
   height: auto;
-  padding-top: 16vw;
+  border-radius: 50%;
+  width: 10vw;
+  aspect-ratio: 1/1;
   position: fixed;
-  bottom: -2vh;
-  left: -2vw;
+  margin: 2vh;
+  bottom: 0;
+  left: 0;
   border-radius: 50%;
   display: flex;
   flex: 0 0 auto;
 }
-#uint .uicon {
-  width: 40px;
-  background-color: #4400ff;
+#uint #uicons {
+  display: flex;
+  height: 50vh;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  justify-content: space-around;
   position: absolute;
-  left: calc(50% - 20px);
-  top: calc(50% - 20px);
-  width: 40px;
-  height: 40px;
-  display: none;
+  top: 20%;
+  left: -10%;
 }
-#uint .uicon:nth-child(2) {
-  transform: rotate(72deg) translateX(-9vw);
+#uint #logo.ok ~ #uicons {
+  display: flex;
+  height: 50vh;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  position: absolute;
+  top: 20%;
+  left: 3%;
 }
-#uint .uicon:nth-child(3) {
-  transform: rotate(106deg) translateX(-9vw);
-}
-#uint .uicon:nth-child(4) {
-  transform: rotate(140deg) translateX(-9vw);
-}
-#uint .uicon:nth-child(5) {
-  transform: rotate(176deg) translateX(-9vw);
+#uint .uicon {
+  background: rgb(53, 56, 59);
+  background: linear-gradient(16deg, rgb(53, 56, 59) 0%, rgb(44, 44, 48) 35%, rgb(0, 0, 0) 100%);
+  box-shadow: 0px 0px 47px -5px rgb(0, 0, 0);
+  border-radius: 15%;
+  width: 3vw;
+  height: auto;
+  aspect-ratio: 1/1;
 }
 
 div.SoloAlert-prompt-input-wrapper div label {
