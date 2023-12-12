@@ -132,20 +132,19 @@ div#content #contact {
           backdrop-filter: blur(10px);
   left: 0;
   display: grid;
-  grid-template: 0.75fr 0.25fr/0.5fr 0.5fr;
+  grid-template: 0.8fr 0.2fr/0.4fr 0.65fr;
 }
 div#content #contact .vid {
   background-color: #201F23;
   grid-area: 1/1/2/3;
 }
 div#content #contact .vid video {
-  -o-object-fit: cover;
-     object-fit: cover;
   width: 100%;
-  height: 75%;
+  height: 97%;
   position: fixed;
   top: 0;
   left: 0;
+  grid-area: 1/1/2/3;
 }
 div#content #contact .cam {
   background-color: #201F23;
@@ -160,6 +159,7 @@ div#content #contact .cam canvas {
   width: 100% !important;
   margin-left: 2%;
   border-radius: 15px;
+  grid-area: 2/1/2/1;
 }
 div#content #contact .useless {
   background-color: #201F23;
@@ -467,6 +467,7 @@ div#content .plan.active ~ .budg {
   width: 3vw;
   height: auto;
   aspect-ratio: 1/1;
+  display: none;
 }
 
 div.SoloAlert-prompt-input-wrapper div label {
